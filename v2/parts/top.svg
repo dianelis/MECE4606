@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+        <svg width="115.4mm" height="95.4mm" viewBox="0 0 115.4 95.4"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="CUT" stroke="rgb(255,0,0)" stroke-width="0.2" fill="none">
+<line x1="0.000" y1="0.000" x2="115.400" y2="0.000" />
+<line x1="115.400" y1="0.000" x2="115.400" y2="95.400" />
+<line x1="115.400" y1="95.400" x2="0.000" y2="95.400" />
+<line x1="0.000" y1="95.400" x2="0.000" y2="0.000" />
+</g>
+<g id="ENGRAVE" stroke="none" fill="rgb(0,0,255)">
+<text x="57.700" y="44.535" font-family="sans-serif" font-size="15.826" text-anchor="middle" dominant-baseline="middle">LORENZO</text>
+<text x="57.700" y="63.526" font-family="sans-serif" font-size="15.826" text-anchor="middle" dominant-baseline="middle">DIANE</text>
+</g>
+<g id="CUT" stroke="rgb(255,0,0)" stroke-width="0.2" fill="none">
+<circle cx="2.350" cy="2.350" r="1.100" />
+<circle cx="113.050" cy="2.350" r="1.100" />
+<circle cx="113.050" cy="93.050" r="1.100" />
+<circle cx="2.350" cy="93.050" r="1.100" />
+</g></svg>
