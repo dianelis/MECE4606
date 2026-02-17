@@ -9,11 +9,12 @@ Repository for Digital Manufacturing assignments and projects.
 ├── README.md                 # Documentation
 ├── lamp_lattice/             # Project 2: Generative Lampshade
 │   └── lamp.scad             # OpenSCAD script for lattice lamp
-├── v1/                       # Project 1: Box Generator (V1)
-│   ├── box_generator.py      # Main CLI Application
-│   ├── output/               # Generated .svg files go here
-│   └── generate_scripts/     # Helper scripts for preset sizes
-└── v2/                       # Project 1: Box Generator (V2 - Dev)
+└── laser_cut/                # Project 1: Box Generator (V1 & V2)
+    ├── v1/                   # Version 1 Codebase
+    │   ├── box_generator.py  # Main CLI Application
+    │   ├── output/           # Generated .svg files go here
+    │   └── generate_scripts/ # Helper scripts for preset sizes
+    └── v2/                   # Version 2 Codebase (In Development)
 ```
 
 ---
@@ -47,7 +48,7 @@ A Python tool to generate **fabrication-ready SVG files** for laser-cut acrylic 
 Run the main script and follow the prompts:
 
 ```bash
-python3 v1/box_generator.py
+python3 laser_cut/v1/box_generator.py
 ```
 
 ### Assembly
