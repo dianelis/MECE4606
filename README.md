@@ -23,14 +23,24 @@ Repository for Digital Manufacturing assignments and projects.
 
 A procedural OpenSCAD script to generate a 3D printed lampshade with a lattice pattern.
 
+### Files
+- **`lamp_lattice/lamp_v1.scad`**:
+    - **Design**: Conical body with a regular triangle lattice pattern.
+    - **Base**: Features a 5-point star cutout.
+    - **Color**: Rendered in Green.
+- **`lamp_lattice/lamp_v2.scad`**:
+    - **Design**: Twisted, undulating body with a randomized "jittered" lattice (guaranteed >5mm spacing).
+    - **Features**: Integrated circular top collar for light fitting.
+    - **Base**: Plain circular base.
+
 ### Features
 - **Parametric Design**: Adjustable height, radii, and lattice density.
-- **Generative Lattice**: Automatically creates a triangle lattice pattern on a conical surface.
 - **Print Ready**: Designed to be stable and printable on Shapeways (SLS/SLA).
+- **Socket Fit**: Designed for a light fixture with 18mm height, 37.4mm base dia, 36.2mm top dia.
 
 ### Usage
-1.  Open `lamp_lattice/lamp.scad` in OpenSCAD.
-2.  Adjust parameters at the top of the file (e.g., `total_height`, `lattice_rows`).
+1.  Open `lamp_lattice/lamp_v1.scad` or `lamp_lattice/lamp_v2.scad` in OpenSCAD.
+2.  Adjust parameters at the top of the file if needed.
 3.  Press **F6** to render and export as STL.
 
 ---
