@@ -1,17 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" style="background:#fff6e0">
-  <!-- Hoop outline -->
-  <rect x="0" y="0" width="1000" height="1000" fill="none" stroke="#ccc" stroke-width="2"/>
-  <!-- Border ring -->
-  <circle cx="500" cy="500" r="480" fill="none" stroke="#c0c0c0" stroke-width="1.5" stroke-dasharray="4,4"/>
-  <!-- Cheese fill -->
-  <path d="M 500.0,635.0 L 733.3,401.7 A 330,330 0 0,0 266.7,401.7 Z" fill="#FFD700" fill-opacity="0.9" stroke="#c8a800" stroke-width="1"/>
-  <!-- Crust -->
-  <path d="M 500.0,635.0 L 782.8,352.2 A 400,400 0 0,0 217.2,352.2 Z" fill="none" stroke="#B45009" stroke-width="6"/>
-  <!-- Pepperoni -->
-  <circle cx="500.0" cy="486.0" r="48" fill="#C0392B" fill-opacity="0.9" stroke="#8B0000" stroke-width="2"/>
-  <circle cx="587.1" cy="399.9" r="48" fill="#C0392B" fill-opacity="0.9" stroke="#8B0000" stroke-width="2"/>
-  <circle cx="412.9" cy="399.9" r="48" fill="#C0392B" fill-opacity="0.9" stroke="#8B0000" stroke-width="2"/>
-  <!-- Text -->
-  <text x="500.0" y="695.0" text-anchor="middle" font-family="serif" font-size="28" fill="#141464" font-weight="bold">Diane | Lorenzo</text>
-  <circle cx="500" cy="500" r="4" fill="red" opacity="0.3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" style="background:#fff8f0">
+  <defs><filter id="sh"><feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.15"/></filter></defs>
+  <circle cx="500" cy="500" r="490" fill="none" stroke="#ddd" stroke-width="2" stroke-dasharray="6,4"/>
+  <path d="M 500.0,635.0 L 733.3,401.7 A 330,330 0 0,0 266.7,401.7 Z" fill="#FFD700" stroke="#c9a800" stroke-width="1.5" filter="url(#sh)"/>
+  <path d="M 733.3,401.7 L 782.8,352.2 A 400,400 0 0,0 217.2,352.2 L 266.7,401.7 A 330,330 0 0,1 733.3,401.7" fill="#C8731A" stroke="#8B4513" stroke-width="1.5"/>
+  <line x1="500.0" y1="635.0" x2="782.8" y2="352.2" stroke="#8B4513" stroke-width="2.5"/>
+  <line x1="500.0" y1="635.0" x2="217.2" y2="352.2" stroke="#8B4513" stroke-width="2.5"/>
+  <path d="M 782.8,352.2 A 400,400 0 0,0 217.2,352.2" fill="none" stroke="#8B4513" stroke-width="2.5"/>
+  <circle cx="500.0" cy="486.0" r="48" fill="#C0392B" stroke="#8B0000" stroke-width="2" filter="url(#sh)"/>
+  <circle cx="490.0" cy="476.0" r="10" fill="white" fill-opacity="0.2"/>
+  <circle cx="587.1" cy="399.9" r="48" fill="#C0392B" stroke="#8B0000" stroke-width="2" filter="url(#sh)"/>
+  <circle cx="577.1" cy="389.9" r="10" fill="white" fill-opacity="0.2"/>
+  <circle cx="412.9" cy="399.9" r="48" fill="#C0392B" stroke="#8B0000" stroke-width="2" filter="url(#sh)"/>
+  <circle cx="402.9" cy="389.9" r="10" fill="white" fill-opacity="0.2"/>
+  <text x="500.0" y="695.0" text-anchor="middle" font-family="Georgia, serif" font-size="30" fill="#141464" font-weight="bold" letter-spacing="1">Diane | Lorenzo</text>
 </svg>
