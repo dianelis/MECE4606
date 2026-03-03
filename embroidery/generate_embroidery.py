@@ -473,7 +473,7 @@ def generate_pizza_embroidery(
     # --- Dynamically center the design vertically ---
     # Design spans: crust_top (cy+R) down to text_bottom (text_y - text_height)
     # text_y = cy - text_gap;  text_height ≈ cap_height (70 JEF units for 7mm)
-    text_gap   = 30    # gap between slice tip and top of text (JEF units)
+    text_gap   = 60    # gap between slice tip and top of text (JEF units)
     text_h     = 70    # approximate text cap height in JEF units
     border_pad = 20    # padding from hoop edge for border ring
     # Total vertical span: R (up from tip to crust) + text_gap + text_h
@@ -563,6 +563,7 @@ def generate_pizza_embroidery(
     # COLOR CHANGE → COLOR 1: Crust outline + arc satin
     # -----------------------------------------------------------------------
     all_stitch_cmds.append(('color_change',))
+    current_pos[0] = 0; current_pos[1] = 0  # viewer resets to origin on color change
 
     print("Generating crust...")
     # Outline: left radial edge
@@ -608,27 +609,28 @@ def generate_pizza_embroidery(
     # COLOR CHANGE → COLOR 2: Pepperoni
     # -----------------------------------------------------------------------
     all_stitch_cmds.append(('color_change',))
+    current_pos[0] = 0; current_pos[1] = 0  # viewer resets to origin on color change
 
     print("Generating pepperoni...")
     pep_R_jef = 48  # pepperoni radius in JEF units (4.8 mm) – slightly larger
-    # Place pepperoni inside the wedge
+    pep_offset_up = 50  # shift all pepperoni up 5 mm (50 JEF units)
     center_ang_rad = math.radians(center_angle)
     pep_positions = []
     if num_pepperoni >= 1:
-        # Center pepperoni, at ~55% radius
-        pr = fill_R * 0.55
+        # 1 pepperoni near the tip (bottom of wedge), at ~30% radius
+        pr = fill_R * 0.30
         pep_positions.append((cx + pr * math.cos(center_ang_rad),
                                cy + pr * math.sin(center_ang_rad)))
     if num_pepperoni >= 2:
-        # Left of center
-        offset_ang = math.radians(center_angle - slice_angle_deg * 0.3)
-        pr2 = fill_R * 0.30
+        # Upper-left pepperoni, near the crust
+        offset_ang = math.radians(center_angle - slice_angle_deg * 0.28)
+        pr2 = fill_R * 0.62
         pep_positions.append((cx + pr2 * math.cos(offset_ang),
                                cy + pr2 * math.sin(offset_ang)))
     if num_pepperoni >= 3:
-        # Right of center
-        offset_ang = math.radians(center_angle + slice_angle_deg * 0.3)
-        pr2 = fill_R * 0.30
+        # Upper-right pepperoni, near the crust
+        offset_ang = math.radians(center_angle + slice_angle_deg * 0.28)
+        pr2 = fill_R * 0.62
         pep_positions.append((cx + pr2 * math.cos(offset_ang),
                                cy + pr2 * math.sin(offset_ang)))
     for extra in range(3, num_pepperoni):
@@ -636,6 +638,8 @@ def generate_pizza_embroidery(
         pr = fill_R * 0.45
         pep_positions.append((cx + pr * math.cos(ang),
                                cy + pr * math.sin(ang)))
+    # Apply the upward shift to all pepperoni
+    pep_positions = [(px, py + pep_offset_up) for px, py in pep_positions]
 
     for pcx, pcy in pep_positions:
         # Outline
@@ -650,6 +654,7 @@ def generate_pizza_embroidery(
     # COLOR CHANGE → COLOR 3: Text "Diane | Lorenzo"
     # -----------------------------------------------------------------------
     all_stitch_cmds.append(('color_change',))
+    current_pos[0] = 0; current_pos[1] = 0  # viewer resets to origin on color change
 
     print("Generating text...")
     # Position text just below the slice tip, using the computed gap
